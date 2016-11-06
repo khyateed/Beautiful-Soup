@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]--><!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]--><!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]--><!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]--><!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html dir="ltr" lang="en" prefix="fb: http://www.facebook.com/2008/fbml content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+<meta content="NO-CACHE" http-equiv="PRAGMA"/>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwQGVl5TGwIAXFZRBQMA"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(12),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(13),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(5),t(4),"addEventListener"in window&&t(3),s.xhrWrappable&&t(6),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(14)(a),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=s(n,"nr@wrapped",function(){return c(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&c.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],4:[function(t,e,n){var r=t("ee").get("raf"),o=t(14)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],5:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(14)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],6:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,v,"fn-",c)}function i(t){y.push(t),h&&(w=-w,x.data=w)}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var f=t("ee"),u=f.get("xhr"),d=t(14)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",v=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var g=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,g),g.prototype=p.prototype,d.inPlace(g.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var w=1,x=document.createTextNode(w);new h(a).observe(x,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],7:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(8),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(11),h=t(10),m=window.XMLHttpRequest;a.features.xhr=!0,t(6),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],8:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],9:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(12),c=t(13),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],10:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],11:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],12:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],13:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],14:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(13),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],c])}f(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],c),l}finally{f(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<n.length;s++)c=n[s],a=t[c],r(a)||(t[c]=e(a,f?c+o:o,i,c))}function f(e,n,r){if(!s){s=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}s=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?c(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var u=f[v[n]];return u&&u.push([y,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){s(t,function(t,n){e=e||"feature",v[n]=e,e in f||(f[e]=[])})}var m={},v={},y={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return y}function i(){return new r}var a="nr@context",c=t("gos"),s=t(12),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!w++){var t=g.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(v,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;g.proto=n?"https://":"http://",c("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=g.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(12),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(9);var m=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},y=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:m,features:{},xhrWrappable:y};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),c("mark",["firstbyte",a()],null,"api");var w=0},{}]},{},["loader",2,7]);</script>
+<meta content="summary" property="twitter:card"/>
+<meta content="https://www.si.umich.edu/programs/bachelor-science-information/bsi-admissions" property="twitter:url"/>
+<link href="https://www.si.umich.edu/sites/default/themes/umsi/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<link href="https://www.si.umich.edu/node/11581" rel="shortlink"/>
+<link href="https://www.si.umich.edu/programs/bachelor-science-information/bsi-admissions" rel="canonical"/>
+<meta content="@umsi" property="twitter:creator"/>
+<meta content="BSI admissions" property="twitter:title"/>
+<meta content="Drupal 7 (http://drupal.org)" name="generator"/>
+<title>BSI admissions | University of Michigan School of Information</title>
+<script src="//use.typekit.net/cac0mpq.js" type="text/javascript"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width" name="viewport"/>
+<meta content="on" http-equiv="cleartype"/>
+<link href="https://www.si.umich.edu/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.si.umich.edu/sites/default/files/css/css_JZOTBDUa7PssrnzktYtS7Ic7D6RX_ELEUt9ki1Ap6KM.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.si.umich.edu/sites/default/files/css/css__0VRciOvGcNb8V2FMgwem9wIjaU3JTm4BEpXXnAQStc.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.si.umich.edu/sites/default/files/css/css_WoOmkS2GE7SWDMOocI82xM58i17kPHr6m0W0IjaGfZE.css" media="all" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="https://www.si.umich.edu/sites/default/themes/umsi/css/ie.css?oejasc" media="all" />
+<![endif]-->
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="https://www.si.umich.edu/sites/default/themes/umsi/css/ie7.css?oejasc" media="all" />
+<![endif]-->
+<script>window.google_analytics_uacct = "UA-21213626-3";</script>
+<script src="https://www.si.umich.edu/sites/default/files/js/js_UWQINlriydSoeSiGQxToOUdv493zEa7dpsXC1OtYlZU.js"></script>
+<script src="https://www.si.umich.edu/sites/default/files/js/js_77Ctke5y0-K1_K8BD7dZskl-3sfD_t8MJKLSguEkuKg.js"></script>
+<script src="https://www.si.umich.edu/sites/default/files/js/js_2CnFZWzKCF6NZkUM3meS6voXnQwBRDVmnkykIyvoHus.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.si.umich.edu/sites/default/files/googleanalytics/analytics.js?oejasc","ga");ga("create", "UA-21213626-3", {"cookieDomain":"auto"});ga("require", "linkid", "linkid.js");ga("set", "page", location.pathname + location.search + location.hash);ga("send", "pageview");</script>
+<script src="https://www.si.umich.edu/sites/default/files/js/js_7JVWXHLe1lj-6YQpM-R9rs5r9JlnZ9DqzvB4LH7OX4M.js"></script>
+<script src="https://www.si.umich.edu/sites/default/files/js/js_v16L4NZYn2mvHbabqXM8ym7nzfoDC9HN6ne0BiJhznY.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"umsi","theme_token":"oExHuiAxLzFnjkPzRvtL5r2q2GZXNPKc1vAH4G8Dkho","js":{"0":1,"sites\/default\/modules\/contrib\/menu_minipanels\/js\/menu_minipanels.js":1,"sites\/all\/libraries\/qtip\/jquery.qtip-1.0.0-rc3.min.js":1,"1":1,"sites\/default\/modules\/contrib\/flexslider\/assets\/js\/flexslider.load.js":1,"2":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/default\/modules\/contrib\/addthis\/addthis.js":1,"sites\/all\/modules\/dhtml_menu\/dhtml_menu.js":1,"sites\/default\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/default\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/default\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"3":1,"sites\/all\/libraries\/flexslider\/jquery.flexslider-min.js":1,"sites\/default\/modules\/contrib\/menu_minipanels\/js\/menu_minipanels.callbacks.js":1,"sites\/default\/modules\/contrib\/field_group\/field_group.js":1,"sites\/default\/themes\/umsi\/js\/jquery.social.media.tabs.1.7.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/default\/modules\/contrib\/ldap\/ldap_user\/ldap_user.css":1,"modules\/book\/book.css":1,"sites\/default\/modules\/custom\/custom_imagebox\/custom_imagebox.css":1,"sites\/default\/modules\/contrib\/date\/date_api\/date.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/default\/modules\/contrib\/views\/css\/views.css":1,"sites\/default\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/dhtml_menu\/dhtml_menu.css":1,"sites\/default\/modules\/contrib\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/default\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/default\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"public:\/\/ctools\/css\/bab59090150caf0c64e27afa1b36eef1.css":1,"public:\/\/ctools\/css\/ee8298de1c801118fe43037ccc4c9f2c.css":1,"public:\/\/ctools\/css\/3d47bb7b02c807dc9d6cc5fd0d85fe5a.css":1,"public:\/\/ctools\/css\/424e997c772471a15bef9c70ce408f79.css":1,"public:\/\/ctools\/css\/a4f18c40aa491f685aa82930f4a852bf.css":1,"public:\/\/ctools\/css\/12dfdd8531d529d29afe344e45bf1830.css":1,"sites\/default\/modules\/contrib\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"public:\/\/ctools\/css\/ce61a3371b698590535b68705eefceaf.css":1,"sites\/default\/modules\/contrib\/menu_minipanels\/css\/menu_minipanels.css":1,"sites\/default\/modules\/contrib\/field_group\/field_group.css":1,"sites\/default\/modules\/contrib\/flexslider\/assets\/css\/flexslider_img.css":1,"sites\/all\/libraries\/flexslider\/flexslider.css":1,"sites\/default\/themes\/umsi\/system.menus.css":1,"sites\/default\/themes\/umsi\/css\/layout.css":1,"sites\/default\/themes\/umsi\/css\/normalize.css":1,"sites\/default\/themes\/umsi\/css\/tabs.css":1,"sites\/default\/themes\/umsi\/css\/header.css":1,"sites\/default\/themes\/umsi\/css\/footer.css":1,"sites\/default\/themes\/umsi\/css\/menu.css":1,"sites\/default\/themes\/umsi\/css\/blocks.css":1,"sites\/default\/themes\/umsi\/css\/general.css":1,"sites\/default\/themes\/umsi\/css\/news.css":1,"sites\/default\/themes\/umsi\/css\/flexslider.css":1,"sites\/default\/themes\/umsi\/css\/search.css":1,"sites\/default\/themes\/umsi\/css\/dcsmt.css":1,"sites\/default\/themes\/umsi\/css\/node.css":1,"sites\/default\/themes\/umsi\/css\/course.css":1,"sites\/default\/themes\/umsi\/css\/views.css":1,"sites\/default\/themes\/umsi\/css\/landing2.css":1,"sites\/default\/themes\/umsi\/css\/ie.css":1,"sites\/default\/themes\/umsi\/css\/ie7.css":1}},"dhtmlMenu":{"nav":"open","animation":{"effects":{"height":"height","opacity":"opacity","width":0},"speed":"500"},"effects":{"siblings":"close-same-tree","children":"none","remember":"0"},"filter":{"type":"whitelist","list":{"menu-menu-mobile-main-menu":"menu-menu-mobile-main-menu","main-menu":0,"management":0,"menu-desktop-main-menu":0,"menu-footer-menu":0,"menu-news":0,"menu-resource-menu":0,"menu-tablet-main-menu":0,"navigation":0,"shortcut-set-1":0,"user-menu":0}}},"flexslider":{"optionsets":{"flexslider_default_slider_thumbnail_controlnav":{"namespace":"flex-","selector":".slides \u003E li","easing":"linear","direction":"horizontal","reverse":false,"smoothHeight":true,"startAt":0,"animationSpeed":600,"initDelay":0,"useCSS":true,"touch":true,"video":false,"keyboard":true,"multipleKeyboard":false,"mousewheel":0,"controlsContainer":".flex-control-nav-container","sync":"","asNavFor":"","itemWidth":0,"itemMargin":0,"minItems":0,"maxItems":0,"move":0,"animation":"slide","slideshow":false,"slideshowSpeed":"7000","directionNav":true,"controlNav":"thumbnails","prevText":"Previous","nextText":"Next","pausePlay":false,"pauseText":"Pause","playText":"Play","randomize":false,"animationLoop":true,"pauseOnAction":true,"pauseOnHover":true,"manualControls":""}},"instances":{"flexslider-1":"flexslider_default_slider_thumbnail_controlnav","flexslider-2":"flexslider_default_slider_thumbnail_controlnav"}},"addthis":{"widget_url":"https:\/\/s7.addthis.com\/js\/250\/addthis_widget.js#pubid=ra-51cef13c25bd1c64?async=1"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackUrlFragments":1},"menuMinipanels":{"panels":{"panel_1008":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"100"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1008"},"panel_1011":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"100"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1011"},"panel_1012":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"100"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1012"},"panel_1013":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"100"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1013"},"panel_1016":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"100"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1016"},"panel_1017":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"100"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1017"},"panel_1018":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"100"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1018"},"panel_1024":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"10"}},"hide":{"delay":"100","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"360"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1024"},"panel_1027":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"10"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1027"},"panel_1028":{"position":{"target":"false","target_custom":"#tablet","type":"absolute","corner":{"target":"bottomRight","tooltip":"topRight"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"10"}},"hide":{"delay":"0","effect":{"type":"slide","length":"10"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1028"},"panel_1029":{"position":{"target":"false","target_custom":"#tablet","type":"absolute","corner":{"target":"bottomRight","tooltip":"topRight"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"10"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1029"},"panel_1032":{"position":{"target":"false","target_custom":"","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"10"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1032"},"panel_1033":{"position":{"target":"false","target_custom":"#tablet","type":"absolute","corner":{"target":"bottomLeft","tooltip":"topLeft"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"10"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1033"},"panel_1034":{"position":{"target":"false","target_custom":"#tablet","type":"absolute","corner":{"target":"bottomRight","tooltip":"topRight"}},"show":{"delay":"140","when":{"event":"mouseover"},"effect":{"type":"slide","length":"10"}},"hide":{"delay":"0","effect":{"type":"slide","length":"100"}},"style":{"name":"light","width":{"min":"0","max":"250"},"border":{"width":"3","color":"#d3d3d3","radius":"0"}},"mlid":"1034"}}}});</script>
+<!--[if lt IE 9]>
+    <script src="/sites/default/themes/zen/js/html5-respond.js"></script>
+    <![endif]-->
+</head>
+<body class="html not-front not-logged-in two-sidebars page-node page-node- page-node-11581 node-type-general-page section-programs">
+<div id="body-inside">
+<div class="body-inside2">
+<p id="skip-link">
+<a class="element-invisible element-focusable" href="#main-menu">Jump to navigation</a>
+</p>
+<div class="container1">
+<div class="page">
+<a href="/">
+<div class="logo">
+<h1>University of Michigan School of Information</h1>
+<img alt="UMSI logo" src="/Users/Khyatee1/Desktop/logo.png"/>
+</div></a>
+<a href="/">
+<div class="intranet-logo">
+<h1>University of Michigan School of Information Intranet</h1>
+<img alt="UMSI logo" src="/sites/default/themes/umsi/imgs/logo_intranet.png"/>
+</div></a>
+<h2 id="site-slogan">Inspiration. Innovation. Impact.</h2>
+<div class="region-header">
+<a class="button-login" href="https://www.si.umich.edu/umich?destination=node/11581">Login</a><div id="cse-search-form" style="width: 100%;">Loading</div>
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load('search', '1', {language: 'en', style: google.loader.themes.DEFAULT});
+google.setOnLoadCallback(function() {
+  var customSearchOptions = {};
+  var orderByOptions = {};
+  orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+  customSearchOptions['enableOrderBy'] = true;
+  customSearchOptions['orderByOptions'] = orderByOptions;
+  var imageSearchOptions = {};
+  imageSearchOptions['layout'] = 'google.search.ImageSearch.LAYOUT_POPUP';
+  customSearchOptions['enableImageSearch'] = true;
+  var customSearchControl =   new google.search.CustomSearchControl('013293204547358997528%3Agqijwn6z5nm', customSearchOptions);
+  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+  var options = new google.search.DrawOptions();
+  options.enableSearchboxOnly('https://www.si.umich.edu/search', 'as_q');
+  options.setAutoComplete(true);
+  customSearchControl.draw('cse-search-form', options);
+}, true);
+</script>
+<!-- <link rel='stylesheet' href='http://www.google.com/cse/style/look/default.css' type='text/css'/> -->
+</div>
+</div><!-- close page -->
+</div><!-- close container -->
+<div class="container2">
+<div class="page">
+<nav class="main-nav" id="desktop" role="navigation">
+<ul class="links"><li class="menu-1008 first"><a class="menu-minipanel menu-minipanel-1008" href="/content/programs" title="">Programs</a></li>
+<li class="menu-1011"><a class="menu-minipanel menu-minipanel-1011" href="/research" title="">Research</a></li>
+<li class="menu-1012"><a class="menu-minipanel menu-minipanel-1012" href="/careers" title="">iCareers</a></li>
+<li class="menu-1013"><a class="menu-minipanel menu-minipanel-1013" href="/newsandevents" title="">News &amp; Events</a></li>
+<li class="menu-1016"><a class="menu-minipanel menu-minipanel-1016" href="/alumni" title="">Alumni</a></li>
+<li class="menu-1017"><a class="menu-minipanel menu-minipanel-1017" href="/about" title="">About</a></li>
+<li class="menu-1018 last"><a class="menu-minipanel menu-minipanel-1018" href="/directory" title="">Directory</a></li>
+</ul></nav>
+<nav class="main-nav" id="tablet" role="navigation">
+<ul class="links"><li class="menu-1024 first"><a class="menu-minipanel menu-minipanel-1024" href="/content/programs" title="">Programs</a></li>
+<li class="menu-1027"><a class="menu-minipanel menu-minipanel-1027" href="/research" title="">Research</a></li>
+<li class="menu-1028"><a class="menu-minipanel menu-minipanel-1028" href="/careers" title="">iCareers</a></li>
+<li class="menu-1029"><a class="menu-minipanel menu-minipanel-1029" href="/newsandevents" title="">News &amp; Events</a></li>
+<li class="menu-1032"><a class="menu-minipanel menu-minipanel-1032" href="/alumni" title="">Alumni</a></li>
+<li class="menu-1033"><a class="menu-minipanel menu-minipanel-1033" href="/about" title="">About</a></li>
+<li class="menu-1034 last"><a class="menu-minipanel menu-minipanel-1034" href="/directory" title="">Directory</a></li>
+</ul></nav>
+<nav class="mobile">
+<div class="region region-navigation">
+<div class="block block-menu first last odd" id="block-menu-menu-menu-mobile-main-menu" role="navigation">
+<ul class="menu"><li class="menu__item is-collapsed is-collapsed first collapsed dhtml-menu collapsed start-collapsed" id="dhtml_menu-1710"><a class="menu__link" href="/content/programs" title="">Programs</a><ul class="menu"><li class="menu__item is-leaf first leaf dhtml-menu" id="dhtml_menu-1727"><a class="menu__link" href="/content/bsi" title="">BSI</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1723"><a class="menu__link" href="/content/msi" title="">MSI</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1726"><a class="menu__link" href="/content/mhi" title="">MHI</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1725"><a class="menu__link" href="/content/phd" title="">PhD</a></li>
+<li class="menu__item is-leaf last leaf dhtml-menu" id="dhtml_menu-1711"><a class="menu__link" href="/programs/courses" title="">Courses</a></li>
+</ul></li>
+<li class="menu__item is-collapsed is-collapsed collapsed dhtml-menu collapsed start-collapsed" id="dhtml_menu-1713"><a class="menu__link" href="/research" title="">Research</a><ul class="menu"><li class="menu__item is-leaf first leaf dhtml-menu" id="dhtml_menu-1973"><a class="menu__link" href="/research/research-administration-team" title="">Research administration team</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1989"><a class="menu__link" href="/newsandevents/faculty-profiles" title="">Faculty profiles</a></li>
+<li class="menu__item is-leaf last leaf dhtml-menu" id="dhtml_menu-1975"><a class="menu__link" href="/research/research-partners" title="">Research partners</a></li>
+</ul></li>
+<li class="menu__item is-collapsed is-collapsed collapsed dhtml-menu collapsed start-collapsed" id="dhtml_menu-1714"><a class="menu__link" href="/careers" title="">iCareers</a><ul class="menu"><li class="menu__item is-leaf first leaf dhtml-menu" id="dhtml_menu-1758"><a class="menu__link" href="/careers/employers" title="">For employers</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1759"><a class="menu__link" href="/careers/students-and-alumni" title="">For students and alumni</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1756"><a class="menu__link" href="/careers/career-development-office" title="">Contact us</a></li>
+<li class="menu__item is-leaf last leaf dhtml-menu" id="dhtml_menu-1977"><a class="menu__link" href="/icareers/featured-umsi-employers" title="">Who hires UMSI grads?</a></li>
+</ul></li>
+<li class="menu__item is-collapsed is-collapsed collapsed dhtml-menu collapsed start-collapsed" id="dhtml_menu-1715"><a class="menu__link" href="/newsandevents" title="">News &amp; Events</a><ul class="menu"><li class="menu__item is-leaf first leaf dhtml-menu" id="dhtml_menu-1716"><a class="menu__link" href="/newsandevents/news" title="">News</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1978"><a class="menu__link" href="/newsandevents/umsi-news-0" title="">UMSI in the news</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1736"><a class="menu__link" href="/newsandevents/events" title="">Events</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1738"><a class="menu__link" href="/news-events/umsi-publications" title="">UMSI publications</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1979"><a class="menu__link" href="/newsandevents/people-profiles" title="">People profiles</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1980"><a class="menu__link" href="/news-events/awards-and-honors" title="">Awards and honors</a></li>
+<li class="menu__item is-leaf last leaf dhtml-menu" id="dhtml_menu-1981"><a class="menu__link" href="/news-events/videos" title="">Videos</a></li>
+</ul></li>
+<li class="menu__item is-collapsed is-collapsed collapsed dhtml-menu collapsed start-collapsed" id="dhtml_menu-1717"><a class="menu__link" href="/alumni" title="">Alumni</a><ul class="menu"><li class="menu__item is-leaf first leaf dhtml-menu" id="dhtml_menu-1982"><a class="menu__link" href="/alumni/giving" title="">Giving</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1983"><a class="menu__link" href="/alumni/alumni-services" title="">Alumni services</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1984"><a class="menu__link" href="/alumni/si-alumni-awards" title="">UMSI alumni awards</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1985"><a class="menu__link" href="/alumni/alumni-society-board" title="">Alumni society board</a></li>
+<li class="menu__item is-leaf last leaf dhtml-menu" id="dhtml_menu-1986"><a class="menu__link" href="/alumni/alumni-volunteer-opportunites" title="">Alumni volunteer opportunities</a></li>
+</ul></li>
+<li class="menu__item is-collapsed is-collapsed collapsed dhtml-menu collapsed start-collapsed" id="dhtml_menu-1718"><a class="menu__link" href="/about" title="">About</a><ul class="menu"><li class="menu__item is-leaf first leaf dhtml-menu" id="dhtml_menu-1739"><a class="menu__link" href="/aboutsi/deans-welcome" title="">Dean's welcome</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1747"><a class="menu__link" href="/aboutsi/history-and-mission" title="">Mission and History</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1744"><a class="menu__link" href="/aboutsi/fast-facts-about-si" title="">Fast Facts About UMSI</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1741"><a class="menu__link" href="/aboutsi/diversity-school-information" title="">Diversity</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1731"><a class="menu__link" href="/aboutsi/administration" title="">Administration</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1743"><a class="menu__link" href="/academics/resources/facilities" title="">Facilities</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1746"><a class="menu__link" href="/academics/studentlife/life-ann-arbor" title="">Life in Ann Arbor</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1745"><a class="menu__link" href="/aboutsi/getting-si" title="">Getting to UMSI</a></li>
+<li class="menu__item is-leaf last leaf dhtml-menu" id="dhtml_menu-1732"><a class="menu__link" href="/aboutsi/contact-us" title="">Contact Us</a></li>
+</ul></li>
+<li class="menu__item is-collapsed is-collapsed last collapsed dhtml-menu collapsed start-collapsed" id="dhtml_menu-1719"><a class="menu__link" href="/directory" title="">Directory</a><ul class="menu"><li class="menu__item is-leaf first leaf dhtml-menu" id="dhtml_menu-1728"><a class="menu__link" href="/directory?field_person_firstname_value=&amp;field_person_lastname_value=&amp;rid=4" title="">Faculty</a></li>
+<li class="menu__item is-leaf leaf dhtml-menu" id="dhtml_menu-1729"><a class="menu__link" href="/directory?field_person_firstname_value=&amp;field_person_lastname_value=&amp;rid=7" title="">PhD</a></li>
+<li class="menu__item is-leaf last leaf dhtml-menu" id="dhtml_menu-1730"><a class="menu__link" href="/directory?field_person_firstname_value=&amp;field_person_lastname_value=&amp;rid=5" title="">Staff</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</nav>
+</div><!-- close page -->
+</div><!-- close container -->
+<div class="container3a">
+<div class="page">
+<nav class="breadcrumb" role="navigation"><h2 class="element-invisible">You are here</h2><ol><li><a href="/">Home</a>      &gt;   </li><li><a href="/content/programs">Programs</a>      &gt;   </li><li><a class="active-trail" href="/content/bsi">Bachelor of Science in Information</a>      &gt;   </li><li>BSI admissions</li></ol></nav> </div><!-- close page -->
+</div><!-- close container -->
+<div class="container3">
+<div class="page">
+<div id="main">
+<div class="column panel" id="content" role="main">
+<div id="content-inside">
+<div class="field field-name-title field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even" property="dc:title"><h1 class="page-title">BSI admissions</h1></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><img src="/Users/Khyatee1/Documents/2009/Halloween 2009/FILE0486.JPG" alt="UMSI logo"></p>
+
+
+<p>Our goal is to build a community of students who are diverse and multi-dimensional, self-starters who will contribute both in the classroom and in the field.</p>
+<p>To that end, we seek students with</p>
+<ul><li>Outstanding transcripts that reflect a strong academic record, successful completion of prerequisites, and progress toward meeting distribution requirements in current program</li>
+<li>Engagement with community and/or campus organizations</li>
+<li>Demonstrated leadership capacity</li>
+</ul><p>An application is required for admission to the Bachelor of Science in Information program. There are three ways that students can apply for the Bachelor of Science in Information program: as a high school AMAZING student (preferred admissions), as a transfer AMAZING student from another institution, or as a currently enrolled U-M AMAZING student (cross-campus transfer). All require that students be admitted to the University of Michigan before applying to the School of Information.</p>
+<h3>Currently enrolled U-M students – <a href="https://www.si.umich.edu/programs/bachelor-science-information/how-apply/current-u-m-students">Cross-Campus Transfer</a></h3>
+<p>The School of Information admits students for the Bachelor of Science in Information degree as juniors. Current University of Michigan undergraduate students apply once they have sophomore standing and transfer to the School of Information as juniors. The <a href="https://www.si.umich.edu/programs/bachelor-science-information/how-apply/current-u-m-students">Cross-Campus Transfer application</a> is administered through the Office of Undergraduate Admissions. <strong>The application deadline is February 1 each year.</strong></p>
+<h3>Students at other institutions <span>–</span><span> <a href="https://www.si.umich.edu/programs/bachelor-science-information/how-apply/transfer-students">External Transfer</a></span></h3>
+<p>The School of Information is pleased to announce that starting in Fall 2017, we will be accepting external transfer students from community colleges and other four-year institutions. Prospective students are encouraged to review information about the University of Michigan’s <a href="http://admissions.umich.edu/apply/transfer-students/requirements-deadlines-0">external transfer requirements and deadlines</a>.</p>
+<h3>High school students – <a href="https://www.si.umich.edu/programs/bachelor-science-information/how-apply/high-school-students">Preferred Admissions</a></h3>
+<p>The School of Information admits students as juniors; however, we encourage students applying to the University as freshmen to indicate their interest in later transferring to the School of Information by choosing <a href="https://www.si.umich.edu/programs/bachelor-science-information/how-apply/high-school-students">the Preferred Admissions program</a>. The Preferred Admissions process is part of the Common Application administered through the Office of Undergraduate Admissions.<strong><br/></strong></p>
+</div></div></div><div class="field field-name-share-this-widget field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+var addthis_config =
+{"data_track_addressbar":true}
+;
+//--><!]]>
+</script><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-536005e37c4b8193" type="text/javascript"></script><!-- AddThis Button END --></div></div></div></div>
+</div><!-- /#content -->
+<aside class="sidebars">
+<section class="region region-sidebar-second column sidebar">
+<div></div>
+</section>
+</aside><!-- /.sidebars --> <aside class="sidebars">
+<section class="region region-sidebar-first column sidebar">
+<div class="block block-menu-block first odd" id="block-menu-block-1" role="navigation">
+<h2 class="block__title block-title"><a class="active-trail" href="/content/programs">Programs</a></h2>
+<div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-2">
+<ul class="menu"><li class="menu__item is-active-trail is-expanded first expanded active-trail menu-mlid-1062"><a class="menu__link is-active-trail active-trail" href="/content/bsi">Bachelor of Science in Information</a><ul class="menu"><li class="menu__item is-active is-active-trail is-expanded first expanded active-trail active menu-mlid-2081"><a class="menu__link is-active-trail active-trail active" href="/programs/bachelor-science-information/bsi-admissions">How to apply</a><ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-2730"><a class="menu__link" href="/programs/bachelor-science-information/how-apply/current-u-m-students">Current U-M students</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-2729"><a class="menu__link" href="/programs/bachelor-science-information/how-apply/high-school-students">High school students</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-3426"><a class="menu__link" href="/programs/bachelor-science-information/how-apply/transfer-students">Transfer students</a></li>
+<li class="menu__item is-collapsed last collapsed menu-mlid-2083"><a class="menu__link" href="/programs/bachelor-science-information/bsi-admissions/information-sessions">Visit us</a></li>
+</ul></li>
+<li class="menu__item is-leaf leaf menu-mlid-2738"><a class="menu__link" href="/programs/bachelor-science-information/career-outcomes">Career outcomes</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-2856"><a class="menu__link" href="/programs/bachelor-science-information/degree-requirements">Curriculum</a></li>
+</ul></li>
+<li class="menu__item is-collapsed collapsed menu-mlid-1059"><a class="menu__link" href="/content/msi">Master of Science in Information</a></li>
+<li class="menu__item is-collapsed collapsed menu-mlid-1060"><a class="menu__link" href="/content/mhi">Master of Health Informatics</a></li>
+<li class="menu__item is-collapsed collapsed menu-mlid-1061"><a class="menu__link" href="/content/phd">PhD in Information</a></li>
+<li class="menu__item is-collapsed collapsed menu-mlid-1124"><a class="menu__link" href="/programs/courses">Courses</a></li>
+<li class="menu__item is-collapsed collapsed menu-mlid-2439"><a class="menu__link" href="/programs/initiative-information-impact">Initiative for Information Impact</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-3590"><a class="menu__link" href="/programs/online-offerings-0">Online offerings</a></li>
+<li class="menu__item is-collapsed last collapsed menu-mlid-2444"><a class="menu__link" href="/programs/umsi-entrepreneurship-program">UMSI Entrepreneurship Program</a></li>
+</ul></div>
+</div>
+<div class="block block-menu-block last even" id="block-menu-block-3" role="navigation">
+<h2 class="block__title block-title">Resources for:</h2>
+<div class="menu-block-wrapper menu-block-3 menu-name-menu-resource-menu parent-mlid-0 menu-level-1">
+<ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-728"><a class="menu__link" href="/quicklinks/prospective" title="">Prospective students</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-731"><a class="menu__link" href="/quicklinks/faculty-staff" title="">Faculty and staff</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-733"><a class="menu__link" href="/aboutsi/open-faculty-positions" title="">Prospective faculty</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-732"><a class="menu__link" href="/quicklinks/media" title="">Media</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1820"><a class="menu__link" href="/quicklinks/students" title="">Current students</a></li>
+</ul></div>
+</div>
+</section>
+</aside><!-- /.sidebars -->
+</div><!-- /#main -->
+</div><!-- close page -->
+</div><!-- close container -->
+<div class="container4">
+<div class="page">
+<footer>
+<div id="footer-left">
+<div class="region region-footer-left">
+<div class="block block-block first last odd" id="block-block-9">
+<div class="footer-logo"><h5>University of Michigan School of Information</h5><a href="http://www.umich.edu" target="_BLANK"><img alt="University of Michigan logo" src="/Users/Khyatee1/Desktop/logo.png"/></a></div>
+<p class="footer-copyright">© 2014 Regents of the University of Michigan</p>
+</div>
+</div>
+</div>
+<div id="footer-middle">
+<div class="region region-footer-middle">
+<div class="block block-block first last odd" id="block-block-8">
+
+      
+  School of Information<br/>
+University of Michigan<br/>
+4322 North Quad<br/>
+105 S. State St.<br/>
+Ann Arbor, MI 48109-1285
+</div>
+</div>
+</div>
+<div id="footer-right">
+<div class="region region-footer-right">
+<div class="block block-menu first last odd" id="block-menu-menu-footer-menu" role="navigation">
+<ul class="menu"><li class="menu__item is-leaf first leaf"><a class="menu__link" href="/aboutsi/contact-us" title="">Contact Us</a></li>
+<li class="menu__item is-leaf last leaf"><a class="menu__link" href="/node/10177" title="">Verse</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</div><!-- close page -->
+</div><!-- close container -->
+<div class="region region-page-bottom">
+<div class="menu-minipanels menu-minipanel-1008"><div class="panel-flexible panels-flexible-8 clearfix" id="mini-panel-programs">
+<div class="panel-flexible-inside panels-flexible-8-inside">
+<div class="panels-flexible-region panels-flexible-region-8-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-8-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-2">
+<div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-778 menu-level-1">
+<ul class="menu"><li class="menu__item is-active-trail is-parent is-leaf first leaf has-children active-trail menu-mlid-1062"><a class="menu__link is-active-trail active-trail" href="/content/bsi">Bachelor of Science in Information</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1059"><a class="menu__link" href="/content/msi">Master of Science in Information</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1060"><a class="menu__link" href="/content/mhi">Master of Health Informatics</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1061"><a class="menu__link" href="/content/phd">PhD in Information</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1124"><a class="menu__link" href="/programs/courses">Courses</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-2439"><a class="menu__link" href="/programs/initiative-information-impact">Initiative for Information Impact</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-3590"><a class="menu__link" href="/programs/online-offerings-0">Online offerings</a></li>
+<li class="menu__item is-parent is-leaf last leaf has-children menu-mlid-2444"><a class="menu__link" href="/programs/umsi-entrepreneurship-program">UMSI Entrepreneurship Program</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1011"><div class="panel-flexible panels-flexible-11 clearfix" id="mini-panel-research">
+<div class="panel-flexible-inside panels-flexible-11-inside">
+<div class="panels-flexible-region panels-flexible-region-11-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-11-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-6">
+<div class="menu-block-wrapper menu-block-6 menu-name-main-menu parent-mlid-664 menu-level-1">
+<ul class="menu"><li class="menu__item is-parent is-leaf first leaf has-children menu-mlid-2316"><a class="menu__link" href="/research-projects">Research projects</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1273"><a class="menu__link" href="/research/research-partners" title="Research partners">Research partners</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1950"><a class="menu__link" href="/newsandevents/faculty-profiles">Research faculty bios</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-2539"><a class="menu__link" href="/research/faculty-research-groups">Faculty research groups</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-2543"><a class="menu__link" href="/research/student-research-experiences-1">AMAZING Student research experiences</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1210"><a class="menu__link" href="/research/research-administration-team" title="Research administration team">Research administration team</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1012"><div class="panel-flexible panels-flexible-14 clearfix" id="mini-panel-icareers">
+<div class="panel-flexible-inside panels-flexible-14-inside">
+<div class="panels-flexible-region panels-flexible-region-14-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-14-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-5">
+<div class="menu-block-wrapper menu-block-5 menu-name-main-menu parent-mlid-666 menu-level-1">
+<ul class="menu"><li class="menu__item is-parent is-leaf first leaf has-children menu-mlid-1628"><a class="menu__link" href="/careers/students-and-alumni">For students and alumni</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1609"><a class="menu__link" href="/careers/employers">For employers</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1285"><a class="menu__link" href="/icareers/featured-umsi-employers">Who hires UMSI grads?</a></li>
+<li class="menu__item is-parent is-leaf last leaf has-children menu-mlid-1148"><a class="menu__link" href="/careers/career-development-office">Career Development Office</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1013"><div class="panel-flexible panels-flexible-9 clearfix" id="mini-panel-news">
+<div class="panel-flexible-inside panels-flexible-9-inside">
+<div class="panels-flexible-region panels-flexible-region-9-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-9-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-4">
+<div class="menu-block-wrapper menu-block-4 menu-name-main-menu parent-mlid-665 menu-level-1">
+<ul class="menu"><li class="menu__item is-parent is-leaf first leaf has-children menu-mlid-1004"><a class="menu__link" href="/newsandevents/news" title="">News</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1177"><a class="menu__link" href="/newsandevents/events" title="">Events</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1138"><a class="menu__link" href="/newsandevents/umsi-news-0" title="Stories about UMSI in news media">UMSI in the news</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1610"><a class="menu__link" href="/news-events/umsi-publications">UMSI publications</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1845"><a class="menu__link" href="/newsandevents/people-profiles">People profiles</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-2091"><a class="menu__link" href="/news-events/umsi-app-showcase">UMSI app showcase</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1775"><a class="menu__link" href="/news-events/awards-and-honors">Awards and honors</a></li>
+<li class="menu__item is-parent is-leaf last leaf has-children menu-mlid-1827"><a class="menu__link" href="/news-events/videos">Featured video</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1016"><div class="panel-flexible panels-flexible-15 clearfix" id="mini-panel-alumni">
+<div class="panel-flexible-inside panels-flexible-15-inside">
+<div class="panels-flexible-region panels-flexible-region-15-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-15-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-8">
+<div class="menu-block-wrapper menu-block-8 menu-name-main-menu parent-mlid-667 menu-level-1">
+<ul class="menu"><li class="menu__item is-parent is-leaf first leaf has-children menu-mlid-2323"><a class="menu__link" href="/alumni/giving-umsi/umsi-comprehensive-campaign">The UMSI campaign</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1831"><a class="menu__link" href="/alumni/giving">Giving to UMSI</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1258"><a class="menu__link" href="/alumni/alumni-services">Alumni services</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-3124"><a class="menu__link" href="/alumni/umsi-class-notes">UMSI class notes</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1259"><a class="menu__link" href="/alumni/si-alumni-awards">UMSI alumni awards</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1206"><a class="menu__link" href="/alumni/alumni-society-board">Alumni Society Board</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1260"><a class="menu__link" href="/alumni/alumni-volunteer-opportunites">Volunteer opportunities</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1227"><a class="menu__link" href="/giving/update-your-contact-information">Update contact information</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-2425"><a class="menu__link" href="/contact-alumni-relations">Contact alumni relations</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1017"><div class="panel-flexible panels-flexible-10 clearfix" id="mini-panel-about">
+<div class="panel-flexible-inside panels-flexible-10-inside">
+<div class="panels-flexible-region panels-flexible-region-10-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-10-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-7">
+<div class="menu-block-wrapper menu-block-7 menu-name-main-menu parent-mlid-668 menu-level-1">
+<ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1183"><a class="menu__link" href="/aboutsi/deans-welcome" title="Dean's welcome">Dean's welcome</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1209"><a class="menu__link" href="/aboutsi/fast-facts-about-si">Fast facts</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1185"><a class="menu__link" href="/aboutsi/history-and-mission" title="Mission and history">Mission and history</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1188"><a class="menu__link" href="/aboutsi/diversity-school-information" title="Diversity">Diversity</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1190"><a class="menu__link" href="/aboutsi/administration" title="Administration">Administration</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1442"><a class="menu__link" href="/academics/office-student-affairs" title="Office of Student Affairs">Office of AMAZING Student Affairs</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1204"><a class="menu__link" href="/aboutsi/contact-us" title="Contact us">Contact us</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-2381"><a class="menu__link" href="/external-advisory-board">External Advisory Board</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1456"><a class="menu__link" href="/academics/resources/facilities">Facilities</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1207"><a class="menu__link" href="/aboutsi/getting-si" title="Getting to UMSI">Getting to UMSI</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-2372"><a class="menu__link" href="/about/invest-umsi">Invest in UMSI</a></li>
+<li class="menu__item is-parent is-leaf last leaf has-children menu-mlid-1284"><a class="menu__link" href="/academics/studentlife/life-ann-arbor" title="Life in Ann Arbor">Life in Ann Arbor</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1018"><div class="panel-flexible panels-flexible-12 clearfix" id="mini-panel-clone_of_research">
+<div class="panel-flexible-inside panels-flexible-12-inside">
+<div class="panels-flexible-region panels-flexible-region-12-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-12-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-9">
+<div class="menu-block-wrapper menu-block-9 menu-name-main-menu parent-mlid-669 menu-level-1">
+<ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1193"><a class="menu__link" href="/directory?field_person_firstname_value=&amp;field_person_lastname_value=&amp;rid=4" title="">Faculty</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1195"><a class="menu__link" href="/directory?field_person_firstname_value=&amp;field_person_lastname_value=&amp;rid=7" title="">PhD</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1194"><a class="menu__link" href="/directory?field_person_firstname_value=&amp;field_person_lastname_value=&amp;rid=5" title="">Staff</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1024"><div class="panel-flexible panels-flexible-8 clearfix" id="mini-panel-programs-1">
+<div class="panel-flexible-inside panels-flexible-8-inside">
+<div class="panels-flexible-region panels-flexible-region-8-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-8-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-2">
+<div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-778 menu-level-1">
+<ul class="menu"><li class="menu__item is-active-trail is-parent is-leaf first leaf has-children active-trail menu-mlid-1062"><a class="menu__link is-active-trail is-active-trail active-trail active-trail" href="/content/bsi">Bachelor of Science in Information</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1059"><a class="menu__link" href="/content/msi">Master of Science in Information</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1060"><a class="menu__link" href="/content/mhi">Master of Health Informatics</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1061"><a class="menu__link" href="/content/phd">PhD in Information</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1124"><a class="menu__link" href="/programs/courses">Courses</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-2439"><a class="menu__link" href="/programs/initiative-information-impact">Initiative for Information Impact</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-3590"><a class="menu__link" href="/programs/online-offerings-0">Online offerings</a></li>
+<li class="menu__item is-parent is-leaf last leaf has-children menu-mlid-2444"><a class="menu__link" href="/programs/umsi-entrepreneurship-program">UMSI Entrepreneurship Program</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1027"><div class="panel-flexible panels-flexible-11 clearfix" id="mini-panel-research-1">
+<div class="panel-flexible-inside panels-flexible-11-inside">
+<div class="panels-flexible-region panels-flexible-region-11-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-11-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-6">
+<div class="menu-block-wrapper menu-block-6 menu-name-main-menu parent-mlid-664 menu-level-1">
+<ul class="menu"><li class="menu__item is-parent is-leaf first leaf has-children menu-mlid-2316"><a class="menu__link" href="/research-projects">Research projects</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1273"><a class="menu__link" href="/research/research-partners" title="Research partners">Research partners</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1950"><a class="menu__link" href="/newsandevents/faculty-profiles">Research faculty bios</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-2539"><a class="menu__link" href="/research/faculty-research-groups">Faculty research groups</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-2543"><a class="menu__link" href="/research/student-research-experiences-1">AMAZING Student research experiences</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1210"><a class="menu__link" href="/research/research-administration-team" title="Research administration team">Research administration team</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1028"><div class="panel-flexible panels-flexible-14 clearfix" id="mini-panel-icareers-1">
+<div class="panel-flexible-inside panels-flexible-14-inside">
+<div class="panels-flexible-region panels-flexible-region-14-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-14-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-5">
+<div class="menu-block-wrapper menu-block-5 menu-name-main-menu parent-mlid-666 menu-level-1">
+<ul class="menu"><li class="menu__item is-parent is-leaf first leaf has-children menu-mlid-1628"><a class="menu__link" href="/careers/students-and-alumni">For students and alumni</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1609"><a class="menu__link" href="/careers/employers">For employers</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1285"><a class="menu__link" href="/icareers/featured-umsi-employers">Who hires UMSI grads?</a></li>
+<li class="menu__item is-parent is-leaf last leaf has-children menu-mlid-1148"><a class="menu__link" href="/careers/career-development-office">Career Development Office</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1029"><div class="panel-flexible panels-flexible-9 clearfix" id="mini-panel-news-1">
+<div class="panel-flexible-inside panels-flexible-9-inside">
+<div class="panels-flexible-region panels-flexible-region-9-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-9-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-4">
+<div class="menu-block-wrapper menu-block-4 menu-name-main-menu parent-mlid-665 menu-level-1">
+<ul class="menu"><li class="menu__item is-parent is-leaf first leaf has-children menu-mlid-1004"><a class="menu__link" href="/newsandevents/news" title="">News</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1177"><a class="menu__link" href="/newsandevents/events" title="">Events</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1138"><a class="menu__link" href="/newsandevents/umsi-news-0" title="Stories about UMSI in news media">UMSI in the news</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1610"><a class="menu__link" href="/news-events/umsi-publications">UMSI publications</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1845"><a class="menu__link" href="/newsandevents/people-profiles">People profiles</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-2091"><a class="menu__link" href="/news-events/umsi-app-showcase">UMSI app showcase</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1775"><a class="menu__link" href="/news-events/awards-and-honors">Awards and honors</a></li>
+<li class="menu__item is-parent is-leaf last leaf has-children menu-mlid-1827"><a class="menu__link" href="/news-events/videos">Featured video</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1032"><div class="panel-flexible panels-flexible-15 clearfix" id="mini-panel-alumni-1">
+<div class="panel-flexible-inside panels-flexible-15-inside">
+<div class="panels-flexible-region panels-flexible-region-15-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-15-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-8">
+<div class="menu-block-wrapper menu-block-8 menu-name-main-menu parent-mlid-667 menu-level-1">
+<ul class="menu"><li class="menu__item is-parent is-leaf first leaf has-children menu-mlid-2323"><a class="menu__link" href="/alumni/giving-umsi/umsi-comprehensive-campaign">The UMSI campaign</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1831"><a class="menu__link" href="/alumni/giving">Giving to UMSI</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1258"><a class="menu__link" href="/alumni/alumni-services">Alumni services</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-3124"><a class="menu__link" href="/alumni/umsi-class-notes">UMSI class notes</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1259"><a class="menu__link" href="/alumni/si-alumni-awards">UMSI alumni awards</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1206"><a class="menu__link" href="/alumni/alumni-society-board">Alumni Society Board</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1260"><a class="menu__link" href="/alumni/alumni-volunteer-opportunites">Volunteer opportunities</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1227"><a class="menu__link" href="/giving/update-your-contact-information">Update contact information</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-2425"><a class="menu__link" href="/contact-alumni-relations">Contact alumni relations</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1033"><div class="panel-flexible panels-flexible-10 clearfix" id="mini-panel-about-1">
+<div class="panel-flexible-inside panels-flexible-10-inside">
+<div class="panels-flexible-region panels-flexible-region-10-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-10-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-7">
+<div class="menu-block-wrapper menu-block-7 menu-name-main-menu parent-mlid-668 menu-level-1">
+<ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1183"><a class="menu__link" href="/aboutsi/deans-welcome" title="Dean's welcome">Dean's welcome</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1209"><a class="menu__link" href="/aboutsi/fast-facts-about-si">Fast facts</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1185"><a class="menu__link" href="/aboutsi/history-and-mission" title="Mission and history">Mission and history</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1188"><a class="menu__link" href="/aboutsi/diversity-school-information" title="Diversity">Diversity</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1190"><a class="menu__link" href="/aboutsi/administration" title="Administration">Administration</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1442"><a class="menu__link" href="/academics/office-student-affairs" title="Office of Student Affairs">Office of AMAZING Student Affairs</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1204"><a class="menu__link" href="/aboutsi/contact-us" title="Contact us">Contact us</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-2381"><a class="menu__link" href="/external-advisory-board">External Advisory Board</a></li>
+<li class="menu__item is-parent is-leaf leaf has-children menu-mlid-1456"><a class="menu__link" href="/academics/resources/facilities">Facilities</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1207"><a class="menu__link" href="/aboutsi/getting-si" title="Getting to UMSI">Getting to UMSI</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-2372"><a class="menu__link" href="/about/invest-umsi">Invest in UMSI</a></li>
+<li class="menu__item is-parent is-leaf last leaf has-children menu-mlid-1284"><a class="menu__link" href="/academics/studentlife/life-ann-arbor" title="Life in Ann Arbor">Life in Ann Arbor</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="menu-minipanels menu-minipanel-1034"><div class="panel-flexible panels-flexible-12 clearfix" id="mini-panel-clone_of_research-1">
+<div class="panel-flexible-inside panels-flexible-12-inside">
+<div class="panels-flexible-region panels-flexible-region-12-center panels-flexible-region-first panels-flexible-region-last">
+<div class="inside panels-flexible-region-inside panels-flexible-region-12-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-menu-block-9">
+<div class="menu-block-wrapper menu-block-9 menu-name-main-menu parent-mlid-669 menu-level-1">
+<ul class="menu"><li class="menu__item is-leaf first leaf menu-mlid-1193"><a class="menu__link" href="/directory?field_person_firstname_value=&amp;field_person_lastname_value=&amp;rid=4" title="">Faculty</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1195"><a class="menu__link" href="/directory?field_person_firstname_value=&amp;field_person_lastname_value=&amp;rid=7" title="">PhD</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1194"><a class="menu__link" href="/directory?field_person_firstname_value=&amp;field_person_lastname_value=&amp;rid=5" title="">Staff</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+<script>var addthis_config = {"services_compact":"facebook_like,twitter,more","data_track_clickback":true,"ui_508_compliant":false,"ui_click":false,"ui_cobrand":"","ui_delay":0,"ui_header_background":"","ui_header_color":"","ui_open_windows":false,"ui_use_css":true,"ui_use_addressbook":false,"ui_language":"en","data_ga_property":"UA-21213626-3","data_ga_social":true}
+var addthis_share = {"templates":{"twitter":"{{title}} {{url}} via @AddThis"}}</script>
+<script src="https://www.si.umich.edu/sites/default/files/js/js_XWYQWmnEXPvgUg1El2FGrm2bOMYbPS_GSM1B3UD94Xw.js"></script>
+<script>
+      setTimeout(function(){var a=document.createElement("script");
+      var b=document.getElementsByTagName('script')[0];
+      a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0012/0293.js";
+      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+      </script>
+<script src="https://www.si.umich.edu/sites/default/files/js/js_i_X3IeOYncYpIbqZOegjIu0omgIKqbNyy-O7uE1qwiM.js"></script>
+<script src="https://pm.activestep.org/jira/s/en_USustd2e-418945332/850/3/1.2.9/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=90f61d3c" type="text/javascript"></script>
+</div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"fadfa4d1f2","applicationID":"10873227","transactionName":"YgdVZRBXWEYEBkdbDltNYkMLGV9bAQBLHBFdEg==","queueTime":0,"applicationTime":11,"atts":"TkBWE1hNS0g=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<!--head1 -->
+<script>
+var _prum = [['id', '536d0da8abe53d321cce957d'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+</html>
