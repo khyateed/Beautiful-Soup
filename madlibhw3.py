@@ -10,7 +10,7 @@
 # 1) Print the orginal text (150 tokens)
 # 1) Print the new text
 
-
+############## by khyatee desai
 
 from nltk.book import text2
 import nltk
@@ -18,18 +18,16 @@ import random
 
 debug = False #True
 
-# get file from user to make mad lib out of
+
 if debug:
 	print ("Getting information from file madlib_test.txt...\n")
 
 tokens = text2[:151]
 
 
-print("TOKENS")
-print(tokens)
+
 tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
-print("TAGGED TOKENS")
-print(tagged_tokens)
+
 if debug:
 	print ("First few tagged tokens are:")
 	for tup in tagged_tokens[:5]:
@@ -58,8 +56,9 @@ original=[]
 for word in tokens:
 	original.append(spaced(word))
 
+print('MADLIB:')
 print ("".join(final_words))
-print('--------------------------------------------')
+print('------------------------------------------------------------------------')
 print('ORIGINAL TEXT:')
 print("".join(original))
 

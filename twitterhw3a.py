@@ -2,17 +2,19 @@
 # Twitter account.  Make sure to use the 
 # hashtags #UMSI-206 #Proj3 in the tweet.
 
+
+################### by khyatee desai
+
 # You will demo this live for grading.
 import tweepy
 import json
 
-# access token and keys/secrets
-
+# access token and keys/secrets go here:
 
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
 
 
 api = tweepy.API(auth)
-api.update_with_media('b9055a17eada7348920c3190c482d058.jpg')
+api.update_with_media('b9055a17eada7348920c3190c482d058.jpg',"#UMSI-206 #Proj3")
 

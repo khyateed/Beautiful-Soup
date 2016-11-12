@@ -5,12 +5,12 @@
 # 2) Print the average subjectivity of the results
 # 3) Print the average polarity of the results
 
+#################### by khyatee desai
+
 import tweepy
 from textblob import TextBlob
 
-# Unique code from Twitter
-# Keys and tokens go here
-
+# access token and keys/secrets go here:
 
 
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
@@ -18,7 +18,7 @@ auth.set_access_token(access_token,access_token_secret)
 
 api = tweepy.API(auth)
 
-term ='election'
+term =input("Enter a term you would like to search on twitter: ")
 public_tweets = api.search(term)
 
 pol=[]
@@ -30,7 +30,7 @@ for tweet in public_tweets:
 	analysis = TextBlob(tweet.text)
 	pol.append(analysis.sentiment.polarity)
 	subj.append(analysis.sentiment.subjectivity)
-	print('=====================================================\n')
+	print('\n========================================================================\n')
 summ=0
 for i in pol:
     summ +=i

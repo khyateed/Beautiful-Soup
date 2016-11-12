@@ -2,7 +2,7 @@
 # information/bsi-admissions as a template.
 # STEPS 
 
-
+############# By Khyatee Desai
 
 # Create a similar HTML file but 
 # 1) Replace every occurrence of the word “student” with “AMAZING
@@ -26,11 +26,11 @@ text = soup.prettify()
 
 
 
-one = text.replace("student", "“AMAZING student")
+one = text.replace("student", "AMAZING student")
 
 
 pic = re.findall('<iframe allowfullscreen=.+"',one)
-two = one.replace(pic[0], '<img src="/Users/Khyatee1/Documents/2009/Halloween 2009/FILE0486.JPG" alt="UMSI logo">')
+two = one.replace(pic[0], '<img src="/Users/Khyatee1/Documents/206/Projects/hw3colleen/IMG_5613.jpg" alt="UMSI logo">')
 
 
 src =re.findall('img alt=.+ (src=.+/>)',two)
@@ -41,7 +41,5 @@ b = a.replace(src[2], 'src="/Users/Khyatee1/Desktop/logo.png"/>')
 html= open("bsoup.html",'w')
 html.write(b)
 html.close()
- # <p>
- #             <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mimp_3gquc4?feature=oembed" width="560">
- #             </iframe>
- #            </p>
+
+ 
